@@ -1,13 +1,15 @@
-# Microsoft Teams Browser Automation
+# Browser Automation Projects
 
-This repository contains two independent implementations of Teams browser automation:
+This repository groups browser automation projects by framework:
 
-- `Playwright/` uses Playwright and pytest.
-- `Selenium/` uses Selenium WebDriver.
+- `Playwright/Microsoft teams/`
+- `Selenium/Microsoft teams/`
 
-Each project keeps its own page objects, locators, tests, and dependency list. Both can use the root virtual environment.
+Add future site projects under the relevant framework, for example `Playwright/Amazon/` or `Selenium/Flipkart/`.
 
 ## Setup
+
+Run from this repository root:
 
 ```powershell
 python -m venv .venv
@@ -18,13 +20,16 @@ playwright install chromium
 
 ## Run
 
-Run each framework separately from this repository root:
+Playwright:
 
 ```powershell
-python -m pytest Playwright/tests -v -s
-python Selenium/tests/test_teams.py
+python -m pytest "Playwright/Microsoft teams/tests/" -v -s
 ```
 
-Both workflows sign in to a real Teams account. The current flows also navigate through the app and may schedule a meeting, so use an account and environment where those actions are appropriate.
+Selenium:
 
-The two original repositories remain separate backups; this combined repository contains their current project files as a clean snapshot.
+```powershell
+python "Selenium/Microsoft teams/tests/test_teams.py"
+```
+
+Both flows sign in to Teams and may schedule and save a meeting.
