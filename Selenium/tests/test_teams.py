@@ -19,6 +19,7 @@ def test_teams_login_and_navigation(email: str, password: str):
         t.click_communities_button()
         t.click_activity_button()
         t.click_calender_button()
+        print("\nPASS: Teams sign-in and navigation completed successfully.")
     finally:
         t.driver.quit()
 
