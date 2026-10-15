@@ -1,0 +1,2 @@
+-r Playwright/requirements.txt
+-r Selenium/requirements.txt

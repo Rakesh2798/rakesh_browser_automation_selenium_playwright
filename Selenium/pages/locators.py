@@ -1,0 +1,38 @@
+from selenium.webdriver.common.by import By
+
+
+class TeamsSignLocators:
+    LOGIN_URL = "https://www.microsoft.com/en-in/microsoft-teams/log-in"
+    SIGN_IN_BTN = (By.XPATH, "//span[normalize-space()='Sign in']")
+    EMAIL_INPUT = (By.ID, "i0116")
+    NEXT_BTN_1 = (By.ID, "idSIButton9")
+    NEXT_BTN_2 = (By.CSS_SELECTOR, "button[data-testid='primaryButton']")
+    PASSWORD_INPUT = (By.XPATH, "//input[@id='passwordEntry']")
+    USE_YOUR_PASSWORD = (By.XPATH, "//span[@role='button' and normalize-space()='Use your password']")
+    NO_BUTTON = (By.XPATH,"//button[@type='submit' and normalize-space()='No']")
+    NO = (By.CSS_SELECTOR, "button[data-testid='secondaryButton']")
+
+    CHAT_BUTTON_CSS_SELECTOR = (By.CSS_SELECTOR, "button[aria-label='Chat']")
+    CHAT_BUTTON_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='Chat']")
+    MEET_BUTTON_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='Meet']")
+    MEET_BUTTON_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='Meet']")
+    PEOPLE_BUTTON_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='People']")
+    PEOPLE_BUTTON_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='People']")
+    COPILOT_BUTTON_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='Copilot']")
+    COPILOT_BUTTON_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='Copilot']")
+    COMMUNITIES = (By.CSS_SELECTOR, "button[aria-label='Communities']")
+    COMMUNITIES_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='Communities']")
+    COMMUNITIES_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='Communities']")
+    CALENDAR = (By.CSS_SELECTOR, "button[aria-label='Calendar']")
+    CALENDAR_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='Calendar']")
+    CALENDAR_XPATH = (By.XPATH, "//button[@type='button' and @aria-label='Calendar']")
+    ACTIVITY_CSS_SELECTOR = (By.CSS_SELECTOR, "button[type='button'][aria-label='Activity']")
+    ACTIVITY_XPATH =(By.XPATH, "//button[@type='button' and @aria-label='Activity']")
+    ACTIVITY = (By.CSS_SELECTOR, "button[aria-label='Activity']")
+    NEW_MEETING_CSS_SELECTOR = (By.CSS_SELECTOR, "button[title='Schedule a new meeting']")
+    NEW_MEETING_XPATH1 = (By.XPATH, "//button[@title='Schedule a new meeting']")
+    NEW_MEETING_XPATH = (By.XPATH, "//button[normalize-space()='New meeting']")
+    SAVE_BUTTON_CSS_SELECTOR1 = (By.CSS_SELECTOR, "button[aria-label='Save']")
+    SAVE_BUTTON_XPATH1  = (By.XPATH, "//button[@type='button' and @aria-label='Save']")
+    SAVE_BUTTON_CSS_SELECTOR2  = (By.CSS_SELECTOR, "button[data-tid='calv2-sf-save']")
+    SAVE_BUTTON_XPATH2  = (By.XPATH, "//button[normalize-space()='Save']")
