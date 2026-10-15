@@ -1,11 +1,11 @@
 # Browser Automation Projects
 
-This repository contains browser automation projects organized by framework:
+This repository groups browser automation projects by framework:
 
-- `Playwright/` contains the Playwright page objects and pytest tests.
-- `Selenium/` contains the Selenium page objects and tests.
+- `Playwright/Microsoft teams/`
+- `Selenium/Microsoft teams/`
 
-Each framework has its own README and requirements file. Install the shared dependencies from the repository root:
+Install dependencies from the repository root:
 
 ```powershell
 python -m venv .venv
@@ -19,13 +19,13 @@ playwright install chromium
 Playwright:
 
 ```powershell
-python -m pytest Playwright/tests/ -v -s
+python -m pytest "Playwright/Microsoft teams/tests/" -v -s
 ```
 
 Selenium:
 
 ```powershell
-python Selenium/tests/test_teams.py
+python "Selenium/Microsoft teams/tests/test_teams.py"
 ```
 
 Both flows sign in to Teams and may schedule and save a meeting.

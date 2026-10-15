@@ -1,2 +1,2 @@
--r Playwright/requirements.txt
--r Selenium/requirements.txt
+-r "Playwright/Microsoft teams/requirements.txt"
+-r "Selenium/Microsoft teams/requirements.txt"
