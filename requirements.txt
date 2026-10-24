@@ -1,2 +1,3 @@
--r "Playwright/Microsoft teams/requirements.txt"
--r "Selenium/Microsoft teams/requirements.txt"
+-r playwright/microsoftteams/requirements.txt
+-r selenium/microsoftteams/requirements.txt
+-r api/requirements.txt

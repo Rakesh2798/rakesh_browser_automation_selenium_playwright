@@ -1,0 +1,8 @@
+{
+  "cucumber.features": [
+    "playwright/microsoftteams/bdd/cucumber_python/features/**/*.feature"
+  ],
+  "cucumber.glue": [
+    "playwright/microsoftteams/bdd/cucumber_python/features/**/*.py"
+  ]
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.10 on win32)" generated="2026-10-24T15:38:53.276117" rpa="false" schemaversion="5">
+<suite id="s1" name="Teams Login" source="F:\Project\Browser\selenium\microsoftteams\robot\teams_login.robot">
+<kw name="Open Teams Sign-In Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-10-24T15:38:53.871970" level="INFO">Opening browser 'chrome' to base url 'https://www.microsoft.com/en-in/microsoft-teams/log-in'.</msg>
+<arg>${TEAMS_LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-10-24T15:38:53.870971" elapsed="15.258050"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-10-24T15:39:09.129021" elapsed="0.714259"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:38:53.869973" elapsed="15.975321"/>
+</kw>
+<test id="s1-t1" name="Teams sign-in entry point is visible" line="11">
+<kw name="Given the Teams sign-in page is open">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-24T15:39:09.851437" elapsed="0.096097"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:39:09.851437" elapsed="0.099032"/>
+</kw>
+<kw name="When I look for the sign-in entry point">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-10-24T15:39:09.975254" level="INFO">Element 'xpath://span[normalize-space()='Sign in']' is displayed.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-24T15:39:09.951495" elapsed="0.023759"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:39:09.950469" elapsed="0.024785"/>
+</kw>
+<kw name="Then the sign-in entry point is visible">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-10-24T15:39:10.060145" level="INFO">Element 'xpath://span[normalize-space()='Sign in']' is displayed.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-24T15:39:09.977318" elapsed="0.082827"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:39:09.976307" elapsed="0.083838"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:39:09.845294" elapsed="0.214851"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-10-24T15:39:10.060145" elapsed="2.495733"/>
+</kw>
+<status status="PASS" start="2026-10-24T15:38:53.280297" elapsed="19.275581"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teams Login" id="s1" pass="1" fail="0" skip="0">Teams Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

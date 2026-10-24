@@ -1,31 +1,35 @@
 # Browser Automation Projects
 
-This repository groups browser automation projects by framework:
+This repository contains Microsoft Teams browser automation projects using Playwright and Selenium:
 
-- `Playwright/Microsoft teams/`
-- `Selenium/Microsoft teams/`
+- [Playwright Teams](playwright/microsoftteams/README.md): page objects, pytest checks, and BDD examples using Behave, pytest-bdd, Radish, and Cucumber-style Gherkin with Python steps.
+- [Selenium Teams](selenium/microsoftteams/README.md): Selenium page objects and tests, plus a Robot Framework smoke test using SeleniumLibrary.
 
-Install dependencies from the repository root:
+## Setup
+
+From the repository root, install all Python project dependencies:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-playwright install chromium
+python -m playwright install chromium
 ```
 
-## Run
+## BDD suites
 
-Playwright:
+The repository includes these BDD examples, using only Given, When, and Then steps:
+
+- **Behave** — Python BDD suite for Playwright.
+- **pytest-bdd** — pytest-integrated BDD suite for Playwright.
+- **Radish** — Python BDD suite for Playwright.
+- **Cucumber-style Gherkin with Python steps** — the feature format is Cucumber's Gherkin; Behave runs its Python step definitions because Cucumber has no official Python runner.
+- **Robot Framework with SeleniumLibrary** — Selenium Teams smoke test.
+
+The four Playwright suites sign in to Teams and verify that the home page is displayed. They prompt for an email and masked password, or read `TEAMS_EMAIL` and `TEAMS_PASSWORD` from the environment or `playwright/microsoftteams/.env`. They do not schedule meetings. Setup and run commands are in [playwright/microsoftteams/bdd/README.md](playwright/microsoftteams/bdd/README.md).
+
+Run the Selenium Robot Framework suite from the repository root:
 
 ```powershell
-python -m pytest "Playwright/Microsoft teams/tests/" -v -s
+python -m robot --outputdir selenium/microsoftteams/robot/results selenium/microsoftteams/robot/teams_login.robot
 ```
 
-Selenium:
-
-```powershell
-python "Selenium/Microsoft teams/tests/test_teams.py"
-```
-
-Both flows sign in to Teams and may schedule and save a meeting.
+Its setup and details are in [selenium/microsoftteams/README.md](selenium/microsoftteams/README.md). It checks the public sign-in entry point without logging in. The existing account sign-in flows may schedule and save a meeting.

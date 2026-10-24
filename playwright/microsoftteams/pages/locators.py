@@ -4,6 +4,11 @@ class TeamsSignLocators:
 
     SIGN_IN_BTN = "xpath=//span[normalize-space()='Sign in']"
     EMAIL_INPUT = "input[type='email'], #i0116"
+    EMAIL_PLACEHOLDER = "Email, phone, or Skype"
+    NEXT_BUTTON_NAME = "Next"
+    USE_PASSWORD_BUTTON_NAME = "Use your password"
+    PASSWORD_FIELD_NAME = "Password"
+    NO_BUTTON_NAME = "No"
     NEXT_BTN_1 = "#idSIButton9"
     NEXT_BTN_2 = "button[data-testid='primaryButton']"
     PASSWORD_INPUT = "#passwordEntry"
@@ -20,5 +25,15 @@ class TeamsSignLocators:
     CALENDAR_BUTTON = "button[aria-label='Calendar']"
     ACTIVITY_BUTTON = "button[aria-label='Activity']"
 
+    CHAT_BUTTON_NAME = "Chat"
+    MEET_BUTTON_NAME = "Meet"
+    PEOPLE_BUTTON_NAME = "People"
+    COPILOT_BUTTON_NAME = "Copilot"
+    COMMUNITIES_BUTTON_NAME = "Communities"
+    CALENDAR_BUTTON_NAME = "Calendar"
+    ACTIVITY_BUTTON_NAME = "Activity"
+
     NEW_MEETING_BUTTON = "button[title='Schedule a new meeting']"
+    NEW_MEETING_BUTTON_NAME = "New meeting"
     SAVE_BUTTON = "button[data-tid='calv2-sf-save']"
+    SAVE_BUTTON_NAME = "Save"
