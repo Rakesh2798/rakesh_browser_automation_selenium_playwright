@@ -4,6 +4,7 @@ This repository contains Microsoft Teams browser automation projects using Playw
 
 - [Playwright Teams](playwright/microsoftteams/README.md): page objects, pytest checks, and BDD examples using Behave, pytest-bdd, Radish, and Cucumber-style Gherkin with Python steps.
 - [Selenium Teams](selenium/microsoftteams/README.md): Selenium page objects and tests, plus a Robot Framework smoke test using SeleniumLibrary.
+- [Teams page check](api/README.md): a Python `requests` check that the public Teams sign-in page responds.
 
 ## Setup
 
@@ -13,6 +14,14 @@ From the repository root, install all Python project dependencies:
 python -m pip install -r requirements.txt
 python -m playwright install chromium
 ```
+
+## CI
+
+**Playwright:** GitHub Actions runs a credential-free browser check of the public Teams sign-in page on pushes and pull requests to `main`. It installs Python dependencies and Chromium on the hosted runner.
+
+**Selenium:** Jenkins runs the public sign-in page Robot Framework check using the root [Jenkinsfile](Jenkinsfile). Configure a Jenkins agent with the label `linux-chrome`, Python 3, Google Chrome, and `xvfb-run`, then create a Pipeline job that loads this repository's `Jenkinsfile` from SCM.
+
+The pipelines do not sign in to a Teams account or deploy an application.
 
 ## BDD suites
 

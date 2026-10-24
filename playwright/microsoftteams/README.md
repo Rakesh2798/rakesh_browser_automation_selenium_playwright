@@ -43,6 +43,10 @@ cd /f/Project/Browser
 python -m behave --no-capture playwright/microsoftteams/bdd/cucumber_python/features
 ```
 
+## GitHub Actions CI
+
+The root `.github/workflows/playwright.yml` runs a credential-free public sign-in page browser check on pushes and pull requests to `main`. GitHub Actions installs the Playwright Python dependencies and Chromium on its hosted runner. It does not perform an account sign-in.
+
 ## PowerShell
 
 ### Setup

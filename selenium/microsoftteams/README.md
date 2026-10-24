@@ -43,3 +43,9 @@ python -m venv .venv
 ```
 & .\.venv\Scripts\python.exe -m pytest selenium/microsoftteams/tests/ -v -s
 ```
+
+## Jenkins CI
+
+The repository-root `Jenkinsfile` runs the Robot Framework check for the public Teams sign-in page. Configure a Jenkins Linux agent with the label `linux-chrome` and install Python 3, Google Chrome, and `xvfb-run` on that agent. Then create a Pipeline job from SCM pointing to this repository and its root `Jenkinsfile`. Jenkins checks out the code, installs `selenium/microsoftteams/requirements.txt`, runs the check, and archives the Robot Framework results.
+
+This pipeline checks the public sign-in entry point; it does not sign in to a Teams account.
