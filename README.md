@@ -19,7 +19,7 @@ python -m playwright install chromium
 
 **Playwright:** GitHub Actions runs a credential-free browser check of the public Teams sign-in page on pushes and pull requests to `main`. It installs Python dependencies and Chromium on the hosted runner.
 
-**Selenium:** Jenkins runs the public sign-in page Robot Framework check using the root [Jenkinsfile](Jenkinsfile). Configure a Jenkins agent with the label `linux-chrome`, Python 3, Google Chrome, and `xvfb-run`, then create a Pipeline job that loads this repository's `Jenkinsfile` from SCM.
+**Selenium:** Jenkins runs the public sign-in page Robot Framework check using the root [Jenkinsfile](Jenkinsfile). Configure a Windows Jenkins agent with the label `windows-chrome`, Python 3, and Google Chrome, then create a Pipeline job that loads this repository's `Jenkinsfile` from SCM.
 
 The pipelines do not sign in to a Teams account or deploy an application.
 
