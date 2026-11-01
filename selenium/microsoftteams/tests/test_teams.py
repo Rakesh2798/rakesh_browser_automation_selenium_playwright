@@ -1,12 +1,16 @@
 import sys
-import os
+from pathlib import Path
 
-# Add the project root to sys.path so we can import 'pages'
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Put the Selenium project root first so its MicrosoftTeams package wins over
+# the Playwright project when both page-object folders are on sys.path.
+SELENIUM_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(SELENIUM_ROOT))
 
-from pages.teams_page import TeamsSign
+from microsoftteams.pages.teams_page import TeamsSign
 
-def test_teams_login_and_navigation(email: str, password: str):
+def test_teams_login_and_navigation():
+    email = input("Teams email: ").strip()
+    password = getpass("Teams password: ")
     t = TeamsSign()
     try:
         t.sign_in_teams()
@@ -60,4 +64,6 @@ if __name__ == "__main__":
 
     print("\nStarting Teams automation test...")
     test_teams_login_and_navigation(email, password)
+
+from getpass import getpass
 

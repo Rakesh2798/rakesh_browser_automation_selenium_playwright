@@ -1,1 +1,1 @@
-# Initialize pages package
+"""Selenium page objects for Microsoft Teams."""
