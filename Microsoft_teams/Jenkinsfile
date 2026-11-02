@@ -23,7 +23,7 @@ pipeline {
                     }
                     & .venv/Scripts/python.exe -m pip install --upgrade pip
                     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-                    & .venv/Scripts/python.exe -m pip install -r requirements.txt
+                    & .venv/Scripts/python.exe -m pip install -r Microsoft_teams/requirements.txt
                     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
                 '''
             }
@@ -33,8 +33,8 @@ pipeline {
             steps {
                 powershell '''
                     $ErrorActionPreference = 'Stop'
-                    New-Item -ItemType Directory -Force -Path selenium/robot/results | Out-Null
-                    & .venv/Scripts/python.exe -m robot --variable HEADLESS:True --outputdir selenium/robot/results selenium/robot/teams_login.robot
+                    New-Item -ItemType Directory -Force -Path Microsoft_teams/selenium_teams/robot/results | Out-Null
+                    & .venv/Scripts/python.exe -m robot --variable HEADLESS:True --outputdir Microsoft_teams/selenium_teams/robot/results Microsoft_teams/selenium_teams/robot/teams_login.robot
                     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
                 '''
             }
@@ -43,7 +43,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'selenium/robot/results/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'Microsoft_teams/selenium_teams/robot/results/**', allowEmptyArchive: true
         }
     }
 }
