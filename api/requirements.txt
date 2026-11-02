@@ -1,2 +1,2 @@
-pytest>=8.0.0
-requests>=2.32.0
+# Moved — use the root requirements.txt instead:
+# pip install -r requirements.txt

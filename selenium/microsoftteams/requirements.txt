@@ -1,4 +1,0 @@
-pytest>=8.0.0
-selenium>=4.51.0
-robotframework>=7.0.0
-robotframework-seleniumlibrary>=6.0.0

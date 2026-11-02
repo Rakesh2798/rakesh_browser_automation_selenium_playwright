@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: playwright-${{ github.ref }}
+  group: playwright_teams-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -26,13 +26,13 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: playwright/microsoftteams/requirements.txt
+          cache-dependency-path: requirements.txt
 
       - name: Install Playwright dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r playwright/microsoftteams/requirements.txt
+          python -m pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
       - name: Check Teams public sign-in page with Playwright
-        run: python -m pytest playwright/microsoftteams/tests/test_public_sign_in_page.py -v
+        run: python -m pytest playwright_teams/tests/test_public_sign_in_page.py -v

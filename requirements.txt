@@ -1,3 +1,11 @@
+# Shared venv — create at F:\Project\Browser\.venv (one level above this project)
+# so it can be reused across sibling projects.
+#
+#   python -m venv F:\Project\Browser\.venv
+#   source /f/Project/Browser/.venv/Scripts/activate   # Git Bash
+#   pip install -r Microsoft_teams/requirements.txt
+#   python -m playwright_teams install chromium
+
 # Playwright
 pytest>=8.0.0
 playwright>=1.40.0

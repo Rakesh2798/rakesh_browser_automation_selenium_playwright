@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.10 on win32)" generated="2026-11-02T12:00:43.824408" rpa="false" schemaversion="5">
+<suite id="s1" name="Teams Login" source="F:\Project\Browser\Microsoft_teams\selenium_teams\robot\teams_login.robot">
+<kw name="Open Teams Sign-In Page" type="SETUP">
+<kw name="Create Chrome Options" owner="chrome_options">
+<msg time="2026-11-02T12:00:44.929718" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002451E4A89E0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>${HEADLESS}</arg>
+<doc>Create Chrome options, optionally for a non-interactive CI agent.</doc>
+<status status="PASS" start="2026-11-02T12:00:44.928719" elapsed="0.000999"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-02T12:00:44.929718" level="INFO">Opening browser 'chrome' to base url 'https://www.microsoft.com/en-in/microsoft-teams/log-in'.</msg>
+<arg>${TEAMS_LOGIN_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-02T12:00:44.929718" elapsed="16.106164"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-11-02T12:01:01.036882" elapsed="0.196058"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:00:44.928719" elapsed="16.304221"/>
+</kw>
+<test id="s1-t1" name="Teams sign-in entry point is visible" line="13">
+<kw name="Given the Teams sign-in page is open">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-02T12:01:01.236943" elapsed="0.221098"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:01:01.234942" elapsed="0.223099"/>
+</kw>
+<kw name="When I look for the sign-in entry point">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-02T12:01:01.485050" level="INFO">Element 'xpath://span[normalize-space()='Sign in']' is displayed.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-02T12:01:01.459040" elapsed="0.026010"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:01:01.459040" elapsed="0.027005"/>
+</kw>
+<kw name="Then the sign-in entry point is visible">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-02T12:01:01.510593" level="INFO">Element 'xpath://span[normalize-space()='Sign in']' is displayed.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-02T12:01:01.487052" elapsed="0.023541"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:01:01.486045" elapsed="0.025534"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:01:01.232940" elapsed="0.279638"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-02T12:01:01.513599" elapsed="2.499212"/>
+</kw>
+<status status="PASS" start="2026-11-02T12:00:43.827404" elapsed="20.185407"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teams Login" id="s1" pass="1" fail="0" skip="0">Teams Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
